@@ -1,0 +1,49 @@
+.nav-item{
+    padding: 0 18px;
+}
+
+.container-fluid{
+    padding: 0% 0%;
+}
+
+#box{
+    padding-left: 30px;
+}
+
+#logo{
+    font-family: 'Josefin Sans', sans-serif;
+    margin-left: 20px;
+}
+
+#anunciar{
+    margin-left: 1550px;
+}
+
+h2{
+    padding: 20px;
+}
+
+body{
+    background-color: #E7E9EB;
+}
+
+.botaoAnunciar {
+	margin-bottom: 0px;
+	margin-left: 550px;
+	width: 120px;
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	background-color: #43b65a;
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+	line-height: 21px;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	user-select: none;
+	border: 1px solid transparent;
+}
