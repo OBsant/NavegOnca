@@ -2,6 +2,8 @@ Aplicação com objetivo de cadastrar atravessadores para facilitação da contr
 
 Integrantes: Ocivaldo Bruno, Samoel Vieira, Germano Miranda, Ricardo Larrat, Gabriel de Oliveira
 
+<h2>Telas:</h2>
+
 Tela de listagem de anuncios
 ![image](https://user-images.githubusercontent.com/80661099/164817675-385df9cd-dac8-4baa-9332-8043b29db455.png)
 
