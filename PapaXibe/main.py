@@ -6,7 +6,10 @@ app = Flask(__name__)
 # Apagar algo do banco de dados
 @app.route("/index", methods=['GET', 'POST'])
 def index():
-    return render_template("index.html")
+    if request.method == 'POST':
+        return render_template("list.html")
+    else:
+        return render_template("index.html")
 
 
 """Configurações para pagina de list da aplicação"""
