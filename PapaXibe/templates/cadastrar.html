@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../static/styleCadastrar.css">
+	<title>Cadastro</title>
+</head>
+<body>
+	<div id="form">
+		<form action="{{url_for('list')}}">
+			<h2 class="title">Cadastrar</h2>
+
+			<label for="nome">Nome de usuário</label>
+			<div class="input">
+				<input id="nome" name="nome" placeholder="Nome de usuário" type="text">
+			</div>
+
+			<label for="emailounumerodecelular">Email ou Número de celular</label>
+			<div class="input">
+				<input id="emailounumerodecelular" name="emailounumerodecelular" placeholder="Email ou Número de celular" type="text">
+			</div>
+
+			<label for="senha">Senha</label>
+			<div class="input">
+				<input id="senha" name="senha" placeholder="Senha" type="password">
+			</div>
+
+			<label for="insiraasenhanovamente">Insira a Senha novamente</label>
+			<div class="input">
+				<input id="insiraasenhanovamente" name="insiraasenhanovamente" placeholder="Insira a Senha novamente" type="password">
+			</div>
+
+			<label for="precoparaotransporte">Preço para o transporte</label>
+			<div class="input">
+				<input id="preçoparaotransporte" name="preçoparaotransporte" placeholder="Preço para o transporte" type="text">
+			</div>
+
+            <label for="descricao">Descrição</label>
+			<div class="input">
+				<input id="descricao" name="descricao" placeholder="Descrição" type="text">
+			</div>
+
+
+			<div id="btn">
+				<button type="submit" >Cadastrar</button>
+			</div>
+		</form>		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<title>Entrar</title>
+</head>
+<body>
+	<div id="form">
+		<form action="{{url_for('list')}}">
+			<h2 class="title">Entrar</h2>
+
+			<label for="Email/Celular">Email/Celular</label>
+			<div class="input">
+				<input id="Email/Celular" name="Email/Celular" placeholder="Email/Celular" type="text">
+			</div>
+
+			<label for="senha">Senha</label>
+			<div class="input">
+				<input id="senha" name="senha" placeholder="Senha" type="password">
+			</div>
+
+
+			<div id="btn">
+				<button type="submit" href="{{url_for('list')}}">Entrar</button>
+			</div>
+		</form>		
+	</div>
+
+</body>
+</html>
