@@ -8,12 +8,12 @@
 </head>
 <body>
 	<div id="form">
-		<form action="{{url_for('list')}}">
+		<form action="{{url_for('index')}}" method="post">
 			<h2 class="title">Entrar</h2>
 
-			<label for="Email/Celular">Email/Celular</label>
+			<label for="contato">Email/Celular</label>
 			<div class="input">
-				<input id="Email/Celular" name="Email/Celular" placeholder="Email/Celular" type="text">
+				<input id="contato" name="contato" placeholder="Email/Celular" type="text">
 			</div>
 
 			<label for="senha">Senha</label>
