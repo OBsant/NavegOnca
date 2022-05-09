@@ -1,25 +1,26 @@
+from unittest import result
 from colorama import Cursor
 from flask import Flask, render_template, request
 import pymysql
 
 app = Flask(__name__)
 
-# db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
-# cursor = db.cursor()
+db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
+cursor = db.cursor()
 
-# cursor.execute("DROP TABLE IF EXISTS User")
+cursor.execute("DROP TABLE IF EXISTS User")
 
-# sql = '''CREATE TABLE User(
-#     nome CHAR(50) NOT NULL,
-#     contato CHAR(50) NOT NULL,
-#     senha CHAR(50) NOT NULL,
-#     preco CHAR(50) NOT NULL,
-#     descricao CHAR(50) NOT NULL
-# )'''
+sql = '''CREATE TABLE User(
+    nome CHAR(50) NOT NULL,
+    contato CHAR(50) NOT NULL,
+    senha CHAR(50) NOT NULL,
+    preco CHAR(50) NOT NULL,
+    descricao CHAR(50) NOT NULL
+)'''
 
-# cursor.execute(sql)
+cursor.execute(sql)
 
-# db.close()
+db.close()
 
 """ Configurações para pagina de login/delete da aplicação """
 # Apagar algo do banco de dados
@@ -37,7 +38,31 @@ def index():
 # fazer um while com jinja que list todos os anúncios do banco de dados
 @app.route("/")
 def list():
-    return render_template("list.html")
+
+    db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
+    cursor = db.cursor()
+
+    nomesepreco = []
+
+    lista = []
+
+    sql = 'SELECT * FROM User'
+
+    cursor.execute(sql)
+
+    usuarios = cursor.fetchall()
+    print(usuarios)
+    for row in usuarios:
+
+        lista = [row[0], row[3]]
+
+        nomesepreco.append(lista)
+        print(nomesepreco)
+
+    print(nomesepreco)
+
+    db.close()
+    return render_template("list.html", dados=nomesepreco)
 
 
 """Configurações para pagina de cadastro da aplicação"""
@@ -45,7 +70,6 @@ def list():
 @app.route("/cadastrar", methods=['GET', 'POST'])
 def cadastrar():
     if request.method == 'POST':
-        app = Flask(__name__)
 
         nome = request.form.get("nome")
         senha = request.form.get("senha")
@@ -65,13 +89,11 @@ def cadastrar():
             cursor.execute(sql)
             db.commit()
         except:
-            print("erro caralho")
             db.rollback()
-            # TA DANDO ERRO NESSA PORRA SLA PQ
 
         db.close()
 
-        return render_template("list.html")
+        return render_template("cadastrar.html")
     else:
         return render_template("cadastrar.html")
 
