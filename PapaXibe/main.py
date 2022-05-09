@@ -27,6 +27,22 @@ db.close()
 @app.route("/index", methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
+        ##########AP
+        db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
+        cursor = db.cursor()
+
+        nomesepreco = []
+
+        lista = []
+
+        sql = 'DROP * FROM User'
+
+        cursor.execute(sql)
+
+        usuarios = cursor.fetchall()
+
+        print(nomesepreco)
+
         return render_template("index.html")
     else:
         contato = request.form.get("contato")
@@ -102,6 +118,32 @@ def cadastrar():
 # Mostrar os dados dos anúncios salvos no banco de dados
 @app.route("/exibir")
 def exibir():
+
+    ##########AP
+    db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
+    cursor = db.cursor()
+
+    nomesepreco = []
+
+    lista = []
+
+    sql = 'SELECT * FROM User'
+
+    cursor.execute(sql)
+
+    usuarios = cursor.fetchall()
+    print(usuarios)
+    for row in usuarios:
+
+        lista = [row[0], row[3]]
+
+        nomesepreco.append(lista)
+        print(nomesepreco)
+
+    print(nomesepreco)
+
+    db.close()
+
     return render_template("exibir.html")
 
 if __name__ == "__main__":
