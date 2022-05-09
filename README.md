@@ -1,4 +1,12 @@
+<h2>Papa Xibê</h2>
+
+Problematica: foi oberservada uma dificuldade dos comerciantes de conseguirem transporte mais facilmente e de baixo custo
+
 Objetivo: Aplicação com objetivo de cadastrar atravessadores para facilitação da contratação de serviços de travessia de produtos
+
+Tecnologias utilizadas: CSS, HTML e Python em conjunto com flask
+
+Funcionalidades do produto: Cadastro, Listagem e visualização de anuncios
 
 Integrantes: Ocivaldo Bruno, Samoel Vieira, Germano Miranda, Ricardo Larrat, Gabriel de Oliveira
 
