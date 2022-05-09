@@ -31,17 +31,9 @@ def index():
         db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
         cursor = db.cursor()
 
-        nomesepreco = []
-
-        lista = []
-
         sql = 'DROP * FROM User'
 
         cursor.execute(sql)
-
-        usuarios = cursor.fetchall()
-
-        print(nomesepreco)
 
         return render_template("index.html")
     else:
@@ -123,7 +115,7 @@ def exibir():
     db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
     cursor = db.cursor()
 
-    nomesepreco = []
+    user = []
 
     lista = []
 
@@ -131,20 +123,20 @@ def exibir():
 
     cursor.execute(sql)
 
-    usuarios = cursor.fetchall()
-    print(usuarios)
-    for row in usuarios:
+    usuario = cursor.fetchall()
+    print(usuario)
+    for row in usuario:
 
         lista = [row[0], row[3]]
 
-        nomesepreco.append(lista)
-        print(nomesepreco)
+        user.append(lista)
+        print(user)
 
-    print(nomesepreco)
+    print(user)
 
     db.close()
 
-    return render_template("exibir.html")
+    return render_template("exibir.html", dados=user)
 
 if __name__ == "__main__":
     app.run(debug=True)
