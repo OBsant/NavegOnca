@@ -3,6 +3,8 @@ from colorama import Cursor
 from flask import Flask, render_template, request
 import pymysql
 
+# Faço a travessia de produtos pesados e leves para Belém
+
 app = Flask(__name__)
 
 db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
@@ -27,19 +29,27 @@ db.close()
 @app.route("/index", methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        ##########AP
+        return render_template("index.html")
+    else:
+
         db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
         cursor = db.cursor()
 
-        sql = 'DROP * FROM User'
+        deletar = request.form.get("deletar")
 
-        cursor.execute(sql)
+        sql = f"DELETE from User WHERE contato ='{deletar}'"
+
+        try:
+            cursor.execute(sql)
+            db.commit()
+            print('executou')
+        except:
+            print('erro')
+            db.rollback()
+
+        db.close()
 
         return render_template("index.html")
-    else:
-        contato = request.form.get("contato")
-        print(contato)
-        return render_template("list.html")
 
 
 """Configurações para pagina de list da aplicação"""
@@ -111,32 +121,7 @@ def cadastrar():
 @app.route("/exibir")
 def exibir():
 
-    ##########AP
-    db = pymysql.connect(host="db4free.net", user="admin_uniz", password="senha123", database="proj_integrado")
-    cursor = db.cursor()
-
-    user = []
-
-    lista = []
-
-    sql = 'SELECT * FROM User'
-
-    cursor.execute(sql)
-
-    usuario = cursor.fetchall()
-    print(usuario)
-    for row in usuario:
-
-        lista = [row[0], row[3]]
-
-        user.append(lista)
-        print(user)
-
-    print(user)
-
-    db.close()
-
-    return render_template("exibir.html", dados=user)
+    return render_template("exibir.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -13,7 +13,7 @@
 
 			<label for="contato">Email/Celular</label>
 			<div class="input">
-				<input id="contato" name="contato" placeholder="Email/Celular" type="text">
+				<input id="deletar" name="deletar" placeholder="Email/Celular" type="text">
 			</div>
 
 			<label for="senha">Senha</label>
@@ -23,8 +23,9 @@
 
 
 			<div id="btn">
-				<button type="submit" href="{{url_for('list')}}">Entrar</button>
+				<button type="submit" href="{{url_for('index')}}">Entrar</button>
 			</div>
+			<center><a href="{{url_for('list')}}">Voltar para tela inicial</a></center>
 		</form>		
 	</div>
 
