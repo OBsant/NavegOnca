@@ -1,4 +1,4 @@
-<h2>Papa Xibê</h2>
+<h2>NavegOnça</h2>
 
 Problematica: foi oberservada uma dificuldade dos comerciantes de conseguirem transporte mais facilmente e de baixo custo
 
@@ -13,13 +13,13 @@ Integrantes: Ocivaldo Bruno, Samoel Vieira, Germano Miranda, Ricardo Larrat, Gab
 <h2>Telas:</h2>
 
 Tela de listagem de anuncios
-![image](https://user-images.githubusercontent.com/80661099/167321903-1c817dd8-f848-422a-92e8-05ceafb75860.png)
+![image](https://user-images.githubusercontent.com/80661099/168446136-e47b217d-aa5a-4989-95d7-3ce887b42a84.png)
 
 Tela de exibição do anuncio
-![image](https://user-images.githubusercontent.com/80661099/167321915-0ec0d6f8-3579-4710-ac27-c5591dcc343b.png)
+![image](https://user-images.githubusercontent.com/80661099/168446147-af463db4-0159-4053-8935-2ca898b9239c.png)
 
 Tela de cadastro
-![image](https://user-images.githubusercontent.com/80661099/167321930-5ee04efa-de27-4be7-9051-ee2cd7320682.png)
+![image](https://user-images.githubusercontent.com/80661099/168446118-e03a7a9d-4997-40aa-907e-07db00769599.png)
 
 Tela de login
-![image](https://user-images.githubusercontent.com/80661099/164817720-c2741956-e575-4370-85fc-390649c44db4.png)
+![image](https://user-images.githubusercontent.com/80661099/168446153-65255cfb-807e-4b1d-97bf-ff56663e92cb.png)
