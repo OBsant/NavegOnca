@@ -1,5 +1,3 @@
-from unittest import result
-from colorama import Cursor
 from flask import Flask, render_template, request
 import pymysql
 
